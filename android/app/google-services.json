@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "662602640602",
+    "project_id": "bloc-learning-app",
+    "storage_bucket": "bloc-learning-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662602640602:android:30c61b28d5817949c189e3",
+        "android_client_info": {
+          "package_name": "com.example.learning_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662602640602-q0bqpslpjvgo25c9g0rc6c3m59vv7n1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMxwlKFdNrA-SPEwAV9gcOQUFgLw2NYEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662602640602-q0bqpslpjvgo25c9g0rc6c3m59vv7n1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
