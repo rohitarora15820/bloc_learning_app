@@ -65,6 +65,9 @@ class _SignInPageState extends State<SignInPage> {
                           ]),
                     ),
                     forgotPassword(),
+                    SizedBox(
+                      height: 70.h,
+                    ),
                     buildLoginAndRegisterbtn("Log in", "login", () {
                       SignInController(context).handleSignIn("email");
                     }),

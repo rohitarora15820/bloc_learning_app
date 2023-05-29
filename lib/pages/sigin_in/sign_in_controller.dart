@@ -2,7 +2,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:learning_app/common/entities/values/constants.dart';
 import 'package:learning_app/common/widgets/flutter_toast.dart';
+import 'package:learning_app/global.dart';
 import 'package:learning_app/pages/sigin_in/bloc/signin_blocs.dart';
 
 class SignInController {
@@ -37,6 +39,10 @@ class SignInController {
           var user = credential.user;
           if (user != null) {
             toastInfo(msg: "Verified");
+
+            Global.storageServices.setString(AppContatnts.STORAGE_USER_TOKEN_KEY, "123456");
+            // ignore: use_build_context_synchronously
+            Navigator.of(context).pushNamedAndRemoveUntil("/application", (route) => false);
             return;
           } else {
             toastInfo(msg: "Not verified");
@@ -57,7 +63,7 @@ class SignInController {
         }
       }
     } catch (e) {
-      toastInfo(msg: "Error: " + e.toString());
+      toastInfo(msg: "Error: $e");
     }
   }
 }

@@ -29,7 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
               backgroundColor: Colors.white,
               appBar: buildAppBar("Sign Up"),
               body: SingleChildScrollView(
-                child: Column(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -40,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         child:
                             resuableText("Enter your details below and free sign up")),
                     Container(
-                      margin: EdgeInsets.only(top: 66.h),
+                      margin: EdgeInsets.only(top: 60.h),
                       padding: EdgeInsets.only(left: 25.w, right: 25.w),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

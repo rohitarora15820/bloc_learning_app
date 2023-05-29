@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learning_app/common/entities/values/constants.dart';
+import 'package:learning_app/global.dart';
 
 import 'package:learning_app/pages/welcome/bloc/welcome_events.dart';
 import 'package:learning_app/pages/welcome/bloc/welcomee_bloc.dart';
@@ -127,6 +131,8 @@ Widget _page(int index, BuildContext context, String title, String subtitle,
                 curve: Curves.easeIn);
           } else {
             //jump to new page
+            Global.storageServices.setBool(AppContatnts.STORAGE_DEVICE_FIRST_OPEN, true);
+            log(Global.storageServices.getDeviceFirstOpen().toString());
 
             Navigator.of(context).pushNamedAndRemoveUntil("/sign_in", (route) => false);
           }
