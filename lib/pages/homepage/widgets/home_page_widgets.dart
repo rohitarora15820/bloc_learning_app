@@ -162,19 +162,29 @@ Widget menuView() {
         width: 325.w,
         margin: EdgeInsets.only(top: 15.h),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-        _resuableMenuText("Choose your course",),
-        GestureDetector(
-          onTap: (){},
-          child: _resuableMenuText("See All",colors: AppColors.primaryThirdElementText,fontSize: 10)),
-        ]),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              _resuableText(
+                "Choose your course",
+              ),
+              GestureDetector(
+                  onTap: () {},
+                  child: _resuableText("See All",
+                      colors: AppColors.primaryThirdElementText, fontSize: 10)),
+            ]),
       ),
       Container(
+        margin: EdgeInsets.only(top: 20.w),
         child: Row(
           children: [
-            Container()
+            _reusableMenuText("All"),
+            _reusableMenuText("Popular",
+                textcolors: AppColors.primaryThirdElementText,
+                bgColor: AppColors.primaryBackground),
+            _reusableMenuText("Newest",
+                textcolors: AppColors.primaryThirdElementText,
+                bgColor: AppColors.primaryBackground)
           ],
         ),
       )
@@ -182,15 +192,71 @@ Widget menuView() {
   );
 }
 
+Widget _reusableMenuText(
+  String text, {
+  Color textcolors = AppColors.primaryElementText,
+  Color bgColor = AppColors.primaryElement,
+}) {
+  return Container(
+    margin: EdgeInsets.only(right: 20.w),
+    padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 5.h, bottom: 5.h),
+    decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(7.w),
+        border: Border.all(color: bgColor)),
+    child:
+        _resuableText(text, colors: textcolors, fontWeight: FontWeight.normal),
+  );
+}
 
-Widget _resuableMenuText(String text,{Color colors=AppColors.primaryText,int fontSize=16}){
-  return  Container(
-            child: Text(
-              text,
-              style: TextStyle(
-                  color: colors,
-                  fontWeight: FontWeight.bold,
-                  fontSize: fontSize.sp),
-            ),
-          );
+Widget _resuableText(String text,
+    {Color colors = AppColors.primaryText,
+    int fontSize = 16,
+    FontWeight fontWeight = FontWeight.bold}) {
+  return Text(
+    text,
+    style:
+        TextStyle(color: colors, fontWeight: fontWeight, fontSize: fontSize.sp),
+  );
+}
+
+Widget courseGrid() {
+  return Container(
+    padding: EdgeInsets.all(12.w),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.w),
+        image: const DecorationImage(
+            fit: BoxFit.fill, image: AssetImage("assets/icons/image_2.png"))),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Best course for IT & Engineering",
+          overflow: TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          maxLines: 1,
+          style: TextStyle(
+              color: AppColors.primaryElementText,
+              fontWeight: FontWeight.bold,
+              fontSize: 11.sp),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Text(
+          "Flutter Best course",
+          overflow: TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          maxLines: 1,
+          style: TextStyle(
+              color: AppColors.primaryFourElementText,
+              fontWeight: FontWeight.normal,
+              fontSize: 8.sp),
+        )
+      ],
+    ),
+  );
 }
