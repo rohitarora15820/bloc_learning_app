@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      // providers: AppBlocProviders.allBlocProviders,
       providers: [...AppPages.allBlocProviders(context)],
       child: ScreenUtilInit(
         designSize:const  Size(375, 812),
