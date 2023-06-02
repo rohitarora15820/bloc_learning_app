@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor: AppColors.primaryBackground,
         appBar: buildAppBar(),
         body: BlocBuilder<HomePageBlocs, HomePageStates>(
           builder: (context, state) {

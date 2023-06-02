@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:learning_app/pages/profile/widgets/profile_page.dart';
+import 'package:learning_app/pages/profile/profile_page.dart';
 
 import '../../common/entities/values/colors.dart';
 import '../homepage/homepage.dart';
